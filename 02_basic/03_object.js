@@ -2,7 +2,7 @@
 // Object.create
 
 
-//object literals
+// //object literals
 
 const mysym=Symbol("key1");
 
@@ -14,8 +14,19 @@ location: "surat",
 isLoggedIn: true
 };
 //accessing elemnt
-console.log(JSuser.name)
-console.log(JSuser["name"])
-//accessing symbol as key
+// console.log(JSuser.name)
+// console.log(JSuser["name"])
+// //accessing symbol as key
 
-console.log(JSuser[mysym]);
+// console.log(JSuser[mysym]);
+
+//it will freeze all user updatation on object
+// Object.freeze(JSuser);
+
+
+//make function with object
+JSuser.greeting = function(){
+    console.log(`hello js user, ${this.name} `);
+}
+
+console.log(JSuser.greeting());
